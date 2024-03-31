@@ -1,0 +1,17 @@
+  steps
+conda create -n od python=3.10
+conda activate od
+
+docker pull ghcr.io/opendevin/sandbo:v0.1
+docker ps -a
+
+
+export OPENAI_API_KEY={}
+export WORKSPACE_DIR="~/desktop/openDevin/"
+
+which python
+/opt/miniconda3/envs/od/bin/python
+
+/opt/miniconda3/envs/od/bin/python -m pip install -r requirements.txt 
+
+uvicorn opendevin.server.listen:app --port 3000
